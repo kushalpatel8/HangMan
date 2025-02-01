@@ -8,6 +8,25 @@ function TextInputFormContainer () {
 
     const navigate = useNavigate();
 
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (value) {
+            navigate(`/play`,{state: {wordSelected : value}});
+        }
+    }
+
+    function handleInputChange(event) {
+        setValue(event.target.value);
+    }
+
+    function handleShowHideClick() {
+        if (inputType === "password") {
+            setInputType("text");
+        }else {
+            setInputType("password");
+        }
+    }
+
     return (
 
 
